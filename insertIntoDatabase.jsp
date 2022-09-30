@@ -5,8 +5,7 @@
 
         String submit=request.getParameter("submit");
         boolean isIDExist=false;
-        if(submit.equals("Insert"))
-        {
+    
             String roll_no=(request.getParameter("roll_no"));
             String fname=request.getParameter("fname");
             String lname=request.getParameter("lname");
@@ -28,16 +27,6 @@
                 {
                   isIDExist=true;
                 }
-        }
-        else
-        {
-          %>
-              <script>
-                location.replace("./index.jsp");
-              </script>
-          <%
-        }
-        
 %>
 <%
      if(!isIDExist)
