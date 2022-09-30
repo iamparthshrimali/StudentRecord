@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/add.css">
+    </head>
+</html>
+<body>
+   <div class="container" style="padding: 30px;">
+        <h1> Inserting Record </h1>
+        <div>
+            <div>
+               <form action="./insertIntoDatabase.jsp" >
+                  <label for="roll_no">Roll No: </label> <input type="number" id="roll_no" name="roll_no"  >
+                  <label for="fname">First Name: </label> <input type="text" id="fname" name="fname" >
+                  <label for="lname">Last Name: </label> <input type="text" id="lname" name="lname" >
+                  <input type="submit" value="Insert" name="submit" onclick="return validate(this)" >
+                  <input type="submit" value="Back" name="submit" onclick="return validate(this)">
+               </form>
+            </div>
+        </div>    
+    </div>
+    <p id="error" style="display: none;">All fields are mandatory</p>
+</body>
+
+<script>
+    let  roll_no=document.getElementsByName("roll_no");
+     let fname=document.getElementsByName("fname")[0];
+    let lname=document.getElementsByName("lname")[0];
+    let submit=document.getElementsByName("submit");
+    let error=document.getElementById("error");
+    const validate=(e)=>{ 
+        if(e.value=="Back")
+        {
+            location.replace("./index.jsp");
+        }
+       else
+       {
+            if(fname.value=="" || lname.value=="" || roll_no=="")
+            {
+                error.style.display="block";
+                setTimeout(() => {
+                    error.style.display="none";
+                }, 5000);
+                return false;
+            }
+            fname.value=fname.value.substring(0,1).toUpperCase()+fname.value.substring(1,fname.length).toLowerCase();
+            lname.value=lname.value.substring(0,1).toUpperCase()+lname.value.substring(1,lname.length).toLowerCase();
+            return true;
+       }
+    }
+</script>

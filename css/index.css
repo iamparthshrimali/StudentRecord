@@ -1,0 +1,80 @@
+*{
+   margin:0;
+   padding:0;
+   box-sizing: border-box;
+ }
+ body
+ {
+	   height:100vh;
+	   width:100vw;
+	   background:linear-gradient(to left,blue,pink);
+	   display:flex;
+	   align-items: center;
+	   justify-content:top;
+	   flex-direction:column;
+	   overflow-x: hidden;
+	   padding: 40px;
+	   
+ }
+ 
+ 
+
+.btn
+{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    
+	margin:0 20px;
+	cursor:pointer;
+}
+.modify-btn:hover{
+	background-color: rgba(250,235,215,0.8);
+}
+.delete-btn:hover{
+	background-color: rgba(255,0,0,0.8);
+}
+.add-btn:hover{
+	background-color: rgba(0,128,0,0.8);
+}
+.add-btn
+{
+	background-color: green;
+	color: white;
+	font-weight: 600;
+}
+
+.delete-btn
+{
+	background-color: rgba(255,0,0,0.8);
+	color: white;
+	width:149px;
+	position:absolute;
+	top:10px;
+	right:20px;
+	
+	
+}
+
+ table{
+
+	 width:80vw;
+	 text-align:top;		 
+	 text-align: center;
+	 margin-top: 20px;
+ }
+ 
+ table td{
+	font-size:30px;
+	 padding:10px;
+	
+ }
+
+
+
+ table .heading td
+ {
+	 font-weight:800;
+ }
+ 
+ 
