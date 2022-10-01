@@ -45,8 +45,7 @@
     {
   %><script>alert("ID already exist")</script>
    <% }%>
-%>
+
  <script>
-  
     location.replace("./index.jsp");
  </script>

@@ -14,7 +14,7 @@
 	   flex-direction:column;
 	   overflow-x: hidden;
 	   padding: 40px;
-	   
+	
  }
  
  
@@ -69,7 +69,10 @@
 	 padding:10px;
 	
  }
-
+.container.notactive
+{
+	opacity: 0.5;
+}
 
 
  table .heading td
@@ -77,4 +80,100 @@
 	 font-weight:800;
  }
  
+ .inputWrapDiv
+ {
+	position: absolute;
+	top:16px;
+	left:58px;
+	
+
+ }
+.inputWrapDiv div{
+	position: relative;
+	height: 40px;
+	width: 170px;
+	
+	
+}
+ .inputWrapDiv div p{
+	position:absolute;
+	bottom:3px;
+	color: black;
+	font-size: 20px;
+	transition: bottom 0.4s;
+	z-index: -1;
+ }
+ input:focus{
+	outline: none;
+ }
+
+ .inputWrapDiv .inputBox
+ {
+	background-color: transparent;
+	border:none;
+	position:absolute;
+	border-bottom: 2px solid white;
+	bottom:-19px;
+	font-size: 20px;
+	height:40px;
+ }
+
+ .inputWrapDiv p.active{
+	bottom:20px;
+ }
+
+ .row.notactive
+ {
+	display: none;
+ }
+
+ .addElement
+ {
+	font-size: 25px;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+	
+ }
  
+
+ .addForm
+ {
+	height: 463px;
+    display: flex;
+    width: 584px;
+    background-color: white;
+    flex-direction: column;
+	font-size: 30px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 20px;
+    z-index: 99;
+    position: absolute;
+    padding: 43px;
+	visibility: hidden;
+	
+ }
+
+.addForm.active {
+	visibility: visible;
+}
+
+ .addInput
+ {
+	height:40px;
+	border-radius: 10px;
+ }
+
+ .close
+ {
+	position: absolute;
+    right: 23px;
+    top: 11px;
+    
+    font-size: 52px;
+    color: red;
+    font-weight: 900;
+	cursor: pointer;
+ }
