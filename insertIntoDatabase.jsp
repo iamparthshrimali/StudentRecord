@@ -6,9 +6,9 @@
         String submit=request.getParameter("submit");
         boolean isIDExist=false;
     
-            String roll_no=(request.getParameter("roll_no"));
-            String fname=request.getParameter("fname");
-            String lname=request.getParameter("lname");
+            String roll_no=(request.getParameter("add_roll_no"));
+            String fname=request.getParameter("add_fname");
+            String lname=request.getParameter("add_lname");
          
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/students","root","");
@@ -28,18 +28,7 @@
                   isIDExist=true;
                 }
 %>
-<%
-     if(!isIDExist)
-     {
-      %>
-      <script>
-          
-           alert("Data inserted successfully");
-           
-      </script>
-  <%
-     }
-%>
+
   <%
     if(isIDExist)
     {

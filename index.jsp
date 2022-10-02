@@ -4,18 +4,19 @@
 	</head>
 	<body>
         
-		 <form action="insertIntoDatabase.jsp" method="get" class="addForm">
+		 <form action="insertIntoDatabase.jsp" method="get" onsubmit="return validateAdd()" class="addForm">
 		      <p class="close">X</p>
+			  <p id="error">All fileds are mamdatory</p>
 	   		  <div style="display:flex;flex-direction:column;align-items:center;">
-				<label for="roll_no">Roll No </label> <input type="number" id="roll_no" name="roll_no"  class="addInput" >
+				<label for="roll_no">Roll No </label> <input type="number" id="roll_no" name="add_roll_no"  class="addInput" >
 			  </div>
 			  <div style="display:flex;flex-direction:column;align-items:center;">
-				<label for="fname">First Name </label> <input type="text" id="fname" name="fname"  class="addInput">
+				<label for="fname">First Name </label> <input type="text" id="fname" name="add_fname"  class="addInput">
 			  </div>
 			  <div style="display:flex;flex-direction:column;align-items:center;">
 
 				<label for="lname">Last Name </label>
-				   <input type="text" id="lname" name="lname" class="addInput" >
+				   <input type="text" id="lname" name="add_lname" class="addInput" >
 			  </div>
 			  <div>
 				<input type="submit" value="Insert" name="submit" onclick="return validateAdd()" class="btn" >
@@ -43,7 +44,7 @@
 					      <td>
 								<div style="display:flex;justify-content:center;">
 									<%-- <form action="./add.html" method="post"> --%>
-										<button  value="ADD" class="btn add-btn" onclick="addClicked()">ADD</button>
+										<button  value="ADD" class="btn add-btn" onclick="addIsClicked()">ADD</button>
 									<%-- </form> --%>
 								</div>
 							</td>
@@ -191,9 +192,9 @@ inputBox.addEventListener("input",search);
 		return isAnySingleCheckBoxChecked;
 	}
 
-     let  roll_no=document.getElementsByName("roll_no");
-     let fname=document.getElementsByName("fname")[0];
-    let lname=document.getElementsByName("lname")[0];
+     let  roll_no=document.getElementsByName("add_roll_no");
+     let fname=document.getElementsByName("add_fname")[0];
+    let lname=document.getElementsByName("add_lname")[0];
     let error=document.getElementById("error");
 
 	const validateAdd=()=>
@@ -208,12 +209,13 @@ inputBox.addEventListener("input",search);
             }
             fname.value=fname.value.substring(0,1).toUpperCase()+fname.value.substring(1,fname.length).toLowerCase();
             lname.value=lname.value.substring(0,1).toUpperCase()+lname.value.substring(1,lname.length).toLowerCase();
+		
             return true;
 
 	}
 	let addForm=document.querySelector(".addForm");
 	let container=document.querySelector(".container");
-    const addClicked=()=>
+    const addIsClicked=()=>
 	{
 		container.style.opacity="0.5";
 		addForm.style.visibility="visible";

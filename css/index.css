@@ -3,6 +3,27 @@
    padding:0;
    box-sizing: border-box;
  }
+
+
+ input[type=number]::-webkit-inner-spin-button,
+ input[type=number]::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   margin: 0;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
  body
  {
 	   height:100vh;
@@ -139,21 +160,20 @@
 
  .addForm
  {
-	height: 463px;
+	height: 508px;
     display: flex;
     width: 584px;
     background-color: white;
     flex-direction: column;
-	font-size: 30px;
+    font-size: 30px;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     border-radius: 20px;
     z-index: 99;
     position: absolute;
-    padding: 43px;
-	visibility: hidden;
-	
+    padding: 74px;
+	visibility:hidden;
  }
 
 .addForm.active {
@@ -161,10 +181,13 @@
 }
 
  .addInput
- {
-	height:40px;
-	border-radius: 10px;
+ {height: 40px;
+    padding: 26px 8px;
+    width: 184px;
+    font-size: 33px;
+    border-radius: 10px;
  }
+
 
  .close
  {
@@ -177,3 +200,14 @@
     font-weight: 900;
 	cursor: pointer;
  }
+
+
+ #error
+{
+   font-weight: 900;
+   font-size: 30px;
+   color: red;
+   bottom: 17px;
+   position: absolute;
+   display: none;   
+}
