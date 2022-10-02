@@ -1,6 +1,8 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="./css/index.css" >
+		<link rel="stylesheet" href="./css/search.css">
+		<link rel="stylesheet" href="./css/container.css" >
+		<link rel="stylesheet" href="./css/addForm.css">
 	</head>
 	<body>
         
@@ -19,7 +21,7 @@
 				   <input type="text" id="lname" name="add_lname" class="addInput" >
 			  </div>
 			  <div>
-				<input type="submit" value="Add" name="submit" onclick="return validateAdd()" class="btn" style="font-size:20px" >
+				<input type="submit" value="Add" name="submit"  class="btn" style="font-size:20px" >
 			  </div>
     
 
@@ -72,7 +74,7 @@
 								count= set.getInt("roll_no");
 								initial++;
 							%>
-							<td>
+							<td class="unique">
 								<%= set.getInt("roll_no") %>
 							</td>
 							<td >
@@ -100,136 +102,18 @@
 					<%   
 					  }
 					%>	
-			<form action="deleteSelected.jsp" method="get" onsubmit="return validate();">	
+			<form action="deleteSelected.jsp" method="get" onsubmit="return validateDelete();">	
 			      <input type="text" style="display:none;" name="selectedIDs">
 			      <input type="submit" class="btn delete-btn" value="Delete" /> 			
 		     </form>
 			</table>
 		</div>
 
-
-
-<script>
- //function definaions
-
-    let inputBox=document.querySelector(".inputBox");
-	let isAnySingleCheckBoxChecked=false,isEveryElementChecked=true;
-	let allCheckBox=document.querySelectorAll(".check_box");
-	let selectAllCheckBox=document.querySelector(".selectAllCheckBox");
-	let deleteBtn=document.querySelector(".delete-btn");
-
-    let searchPara=document.querySelector(".inputWrapDiv p");
-	
-    inputBox.addEventListener("focus",()=>{
-		searchPara.classList.add("active");
-	})
-	inputBox.addEventListener("focusout",()=>{
-		searchPara.classList.remove("active");
-		inputBox.value="";
-		search();
-	})
-	
-   let allRowsDiv=document.querySelectorAll(".row");
-
-   const search=()=>{
-	 
-         allRowsDiv.forEach(row => {
-			console.log(row.innerText);
-			if(row.innerText.toLowerCase().includes(inputBox.value.toLowerCase()))
-			{
-				row.classList.remove("notactive");
-			}
-			else{
-				row.classList.add("notactive");
-			}
-		 });
-   }
-inputBox.addEventListener("input",search);
-
-
-	const selectAll= ()=>{	
-		Array.from(allCheckBox).forEach((checkBox)=>{
-			checkBox.checked=selectAllCheckBox.checked ;
-			isAnySingleCheckBoxChecked=selectAllCheckBox.checked;
-		});
-		if(!selectAllCheckBox.checked)
-		{
-			deleteBtn.style.backgroundColor="rgba(255,0,0,0.8)";
-			deleteBtn.value="Delete";
-		}
-		else{
-			deleteBtn.style.backgroundColor="red";
-			deleteBtn.value="Delete all";
-		}
-	}
-	const showDelete=(e)=>{
-		  isAnySingleCheckBoxChecked=false;
-          isEveryElementChecked=true;
-		  allCheckBox.forEach((checkBox)=>{	
-				
-			if(checkBox.checked)
-				isAnySingleCheckBoxChecked=true;
-	        else
-				isEveryElementChecked=false;
-		});
-		deleteBtn.value= isEveryElementChecked ? "Delete All" : "Delete" ;
-		deleteBtn.style.backgroundColor= isAnySingleCheckBoxChecked ? "red": "rgba(255,0,0,0.8)";
-		selectAllCheckBox.checked= isEveryElementChecked ? true:false;
-	}
-
-    let selectedIDs=document.getElementsByName("selectedIDs");
-    const validate=()=>
-	{
-	    let values="";	
-		allCheckBox.forEach(checkBox => {
-			if(checkBox.checked)
-				values+=checkBox.value+":";
-		});
-	
-
-		values=(values.substring(0,values.length-1));
-		selectedIDs[0].value=values;
-		return isAnySingleCheckBoxChecked;
-	}
-
-     let  roll_no=document.getElementsByName("add_roll_no");
-     let fname=document.getElementsByName("add_fname")[0];
-    let lname=document.getElementsByName("add_lname")[0];
-    let error=document.getElementById("error");
-
-	const validateAdd=()=>
-    {
-		    if(fname.value=="" || lname.value=="" || roll_no=="")
-            {
-                error.style.display="block";
-                setTimeout(() => {
-                    error.style.display="none";
-                }, 5000);
-                return false;
-            }
-
-            fname.value=fname.value.substring(0,1).toUpperCase()+fname.value.substring(1,fname.length).toLowerCase();
-            lname.value=lname.value.substring(0,1).toUpperCase()+lname.value.substring(1,lname.length).toLowerCase();
-		
-            return true;
-
-	}
-	let addForm=document.querySelector(".addForm");
-	let container=document.querySelector(".container");
-    const addIsClicked=()=>
-	{
-		container.style.opacity="0.5";
-		addForm.style.visibility="visible";
-		
-	}
-
-   let closeBtn=document.querySelector(".close");
-   closeBtn.addEventListener("click",()=>{
-		addForm.style.visibility="hidden";
-		container.style.opacity="1";
-   })
-</script>
-
+    <script src="./scripts/declration.js"></script> <%-- DOM --%>
+    <script src="./scripts/searchBox.js" ></script>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/deleteForm.js"></script>
+	<script src="./scripts/addForm.js"></script>
     </body>
 
 </html>

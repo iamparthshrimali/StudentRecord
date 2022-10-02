@@ -1,0 +1,46 @@
+.inputWrapDiv
+ {
+	position: absolute;
+	top:16px;
+	left:58px;
+	
+
+ }
+.inputWrapDiv div{
+	position: relative;
+	height: 40px;
+	width: 170px;
+	
+	
+}
+ .inputWrapDiv div p{
+	position:absolute;
+	bottom:3px;
+	color: black;
+	font-size: 20px;
+	transition: bottom 0.4s;
+	z-index: -1;
+ }
+ input:focus{
+	outline: none;
+ }
+
+ .inputWrapDiv .inputBox
+ {
+	background-color: transparent;
+	border:none;
+	position:absolute;
+	border-bottom: 2px solid white;
+	bottom:-19px;
+	font-size: 20px;
+	height:40px;
+ }
+
+.inputWrapDiv p.active{
+	bottom:20px;
+ }
+
+ .row.notactive
+ {
+	display: none;
+ }

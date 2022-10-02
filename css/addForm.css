@@ -1,0 +1,65 @@
+
+ .addElement
+ {
+	font-size: 25px;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+	
+ }
+ 
+
+ .addForm
+ {
+	height: 508px;
+    display: flex;
+    width: 584px;
+    background-color: white;
+    flex-direction: column;
+    font-size: 30px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 20px;
+    z-index: 99;
+    position: absolute;
+    padding: 74px;
+	visibility:hidden;
+ }
+
+.addForm.active {
+	visibility: visible;
+}
+
+ .addInput
+ {
+	height: 40px;
+    padding: 26px 8px;
+    width: 184px;
+    font-size: 33px;
+    border-radius: 10px;
+ }
+
+
+ .close
+ {
+	position: absolute;
+    right: 23px;
+    top: 11px;
+    
+    font-size: 52px;
+    color: red;
+    font-weight: 900;
+	cursor: pointer;
+ }
+
+
+ #error
+{
+   font-weight: 900;
+   font-size: 30px;
+   color: red;
+   bottom: 17px;
+   position: absolute;
+   display: none;   
+}
