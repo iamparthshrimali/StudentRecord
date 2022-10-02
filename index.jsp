@@ -19,9 +19,9 @@
 				   <input type="text" id="lname" name="add_lname" class="addInput" >
 			  </div>
 			  <div>
-				<input type="submit" value="Insert" name="submit" onclick="return validateAdd()" class="btn" >
+				<input type="submit" value="Add" name="submit" onclick="return validateAdd()" class="btn" style="font-size:20px" >
 			  </div>
-    <p id="error" style="display: none;">All fields are mandatory</p>
+    
 
 			    <%-- <input type="submit" value="Back" name="submit" onclick="return validate(this)" class="btn"> --%>
 		 </form>
@@ -207,6 +207,7 @@ inputBox.addEventListener("input",search);
                 }, 5000);
                 return false;
             }
+
             fname.value=fname.value.substring(0,1).toUpperCase()+fname.value.substring(1,fname.length).toLowerCase();
             lname.value=lname.value.substring(0,1).toUpperCase()+lname.value.substring(1,lname.length).toLowerCase();
 		
