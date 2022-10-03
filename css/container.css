@@ -24,14 +24,14 @@
  {
 	   height:100vh;
 	   width:100vw;
-	   background:linear-gradient(to left,blue,pink);
+	
 	   display:flex;
 	   align-items: center;
 	   justify-content:top;
 	   flex-direction:column;
 	   overflow-x: hidden;
 	   padding: 40px;
-	
+	   background-color: white;
  }
  
  
@@ -79,8 +79,13 @@
 	 text-align:top;		 
 	 text-align: center;
 	 margin-top: 20px;
+	 border: 1px solid black;
  }
  
+table td{
+	border:1px solid black;  
+	margin: -2px;
+ }
  table td{
 	font-size:30px;
 	 padding:10px;

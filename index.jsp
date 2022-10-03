@@ -40,7 +40,7 @@
 			</div>
 	  </div>
 		<div class="container">
-			<table border="1">
+			<table >
 				<tr class="heading"> 
 					<td>Roll NO</td>	<td>First Name</td>		<td>Last Name</td>
 					      <td>
