@@ -31,6 +31,6 @@ const showDelete=(e)=>{
 const addIsClicked=()=>
 {
     container.style.opacity="0.5";
-    addForm.style.visibility="visible";
+    form.style.visibility="visible";
     
 }

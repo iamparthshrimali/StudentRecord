@@ -2,11 +2,11 @@
 	<head>
 		<link rel="stylesheet" href="./css/search.css">
 		<link rel="stylesheet" href="./css/container.css" >
-		<link rel="stylesheet" href="./css/addForm.css">
+		<link rel="stylesheet" href="./css/form.css">
 	</head>
 	<body>
         
-		 <form action="insertIntoDatabase.jsp" method="get" onsubmit="return validateAdd()" class="addForm">
+		 <form action="insertIntoDatabase.jsp" method="get" onsubmit="return validateAdd()" class="form">
 		      <p class="close">X</p>
 			  <p id="error">All fileds are mamdatory</p>
 	   		  <div style="display:flex;flex-direction:column;align-items:center;">
@@ -113,7 +113,7 @@
     <script src="./scripts/searchBox.js" ></script>
     <script src="./scripts/index.js"></script>
     <script src="./scripts/deleteForm.js"></script>
-	<script src="./scripts/addForm.js"></script>
+	<script src="./scripts/Form.js"></script>
     </body>
 
 </html>

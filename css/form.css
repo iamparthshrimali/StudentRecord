@@ -9,7 +9,7 @@
  }
  
 
- .addForm
+ .form
  {
 	height: 508px;
     display: flex;
@@ -27,7 +27,7 @@
 	visibility:hidden;
  }
 
-.addForm.active {
+.form.active {
 	visibility: visible;
 }
 

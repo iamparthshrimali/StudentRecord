@@ -1,6 +1,6 @@
 
  closeBtn.addEventListener("click",()=>{
-      addForm.style.visibility="hidden";
+      form.style.visibility="hidden";
       container.style.opacity="1";
  })
 
