@@ -15,3 +15,5 @@ let searchPara = document.querySelector(".inputWrapDiv p");
 let selectedIDs = document.getElementsByName("selectedIDs");
 let allRowsDiv = document.querySelectorAll(".row");
 let closeBtn = document.querySelector(".close");
+let closeModify=document.querySelector(".close-modify");
+let modifyError=document.querySelector(".error");

@@ -63,3 +63,30 @@
    position: absolute;
    display: none;   
 }
+.error
+{
+   font-weight: 900;
+   font-size: 30px;
+   color: red;
+   bottom: 17px;
+   position: absolute;
+   display: none;   
+}
+
+.modify-form
+{
+    height: 534px;
+    display: flex;
+    width: 584px;
+    background-color: skyblue;
+    flex-direction: column;
+    font-size: 30px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 20px;
+    z-index: 99;
+    position: absolute;
+    padding: 35px;
+	visibility:hidden;
+}
