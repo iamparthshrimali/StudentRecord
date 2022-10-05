@@ -9,6 +9,7 @@
 		    if(fname.value=="" || lname.value=="" || roll_no.value=="")
             {
                 error.style.display="block";
+				error.innerText="All fields are mandatory";
                 setTimeout(() => {
                     error.style.display="none";
                 }, 5000);
@@ -16,10 +17,15 @@
             }
 			let isIDExist=false;
             allRollNumbers.forEach(no=> {
-				console.log(no.innerText,roll_no.value);
+				// console.log(no.innerText,roll_no.value);
+
 				if(no.innerText==roll_no.value)
 				{
-					alert("ID exist ");
+					error.style.display="block";
+					error.innerText="ID already exist";
+					setTimeout(() => {
+						error.style.display="none";
+					}, 5000);
 					isIDExist=true;
 				}
 			});

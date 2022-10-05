@@ -8,7 +8,7 @@
         
 		 <form action="insertIntoDatabase.jsp" method="get" onsubmit="return validateAdd()" class="form">
 		      <p class="close">X</p>
-			  <p id="error">All fileds are mamdatory</p>
+			  <p id="error"></p>
 	   		  <div style="display:flex;flex-direction:column;align-items:center;">
 				<label for="roll_no">Roll No </label> <input type="number" id="roll_no" name="add_roll_no"  class="addInput" >
 			  </div>
@@ -31,7 +31,7 @@
 	          <input type="text" name="modifyID" style="display:none">
 			  <h3 class="modifyingWhom"></h2>
 		      <p class="close close-modify">X</p>
-			  <p class="error">All fileds are mamdatory</p>
+			  <p class="error"></p>
 	   		  <div style="display:flex;flex-direction:column;align-items:center;">
 				<label for="roll_no">Roll No </label> <input type="number" id="roll_no" name="modify_roll_no"  class="addInput" >
 			  </div>
@@ -167,6 +167,7 @@
 			 let lnameForm=document.getElementsByName("modify_lname")[0];
                if(fnameForm.value=="" || lnameForm.value=="" || roll_no.value=="")
 				{
+					modifyError.innerText="All fields are mandatory";
 					modifyError.style.display="block";
 					setTimeout(() => {
 		               modifyError.style.display="none";
@@ -178,7 +179,11 @@
 					console.log(no.innerText,roll_no.value);
 					if(no.innerText==roll_no.value && no.innerText!=id) 
 					{
-						alert("ID exist  with another student");
+						modifyError.innerText="ID Exist with other student";
+				     	modifyError.style.display="block";
+						setTimeout(() => {
+		                   modifyError.style.display="none";
+					    }, 5000);
 						isIDExist=true;
 					}
 				});
