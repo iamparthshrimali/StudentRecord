@@ -1,5 +1,3 @@
-# StudentRecord
-
 specifications:
 
 checkbox:
@@ -13,11 +11,11 @@ Runtime search functionality is given
 
 Delete button
   ->Delete button will be look disable unless and until you select atleast one  of the checkbox
-  ->Delete button won't redirect the page to delete page until atleas one checkbox is selected
-  ->Delete button's innertext will be changed to delete all when select all is checked
+  ->Delete button won't redirect the page to delete page until atleast one checkbox is selected
+  ->Delete button's innertext will be changed to delete all when select all is checked or every checkbox is checked
 
 Addform(Tried to make it as most similar to modal)
-  ->validations like
+  ->validations are given like
         ->none of the field should be empty
         ->the id which is entered in AddForm is checked by javascript , so user will unable to add 
           the data with the same id
