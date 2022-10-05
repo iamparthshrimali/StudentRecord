@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="./css/container.css" >
 		<link rel="stylesheet" href="./css/form.css">
 	</head>
-	<body>
+	<body class="body" >
         
 		 <form action="insertIntoDatabase.jsp" method="get" onsubmit="return validateAdd()" class="form">
 		      <p class="close">X</p>
@@ -146,7 +146,11 @@
 			 let roll_no=document.getElementsByName("modify_roll_no")[0];
 			 let fnameForm=document.getElementsByName("modify_fname")[0];
 			 let lnameForm=document.getElementsByName("modify_lname")[0];
+            document.querySelector("body").classList.add("notactive");
 			document.querySelector(".modify-form").style.visibility="visible";
+			let top=window.pageYOffset+45+"px";
+			console.log(top);
+			document.querySelector(".modify-form").style.top=top;
 			container.style.opacity="0.5";
 			document.getElementsByName("modifyID")[0].value=id;
 			document.querySelector(".modifyingWhom").innerText="Modifying "+fname+" "+lname;
@@ -158,6 +162,10 @@
 		 closeModify.addEventListener("click",()=>{
 			document.querySelector(".modify-form").style.visibility="hidden";
 			container.style.opacity="1";
+			document.querySelector("body").classList.add("notactive");
+            document.querySelector("body").classList.remove("notactive");
+
+			
 		 })
 
 		 const validateModify=()=>{
@@ -195,6 +203,7 @@
 				}
 				return false;
 		 }
+
 	</script>
     </body>
 	

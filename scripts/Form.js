@@ -15,6 +15,13 @@
                 }, 5000);
                 return false;
             }
+			if(parseInt(roll_no.value)<=0)
+			{
+				error.style.display="block";
+				error.innerText="ID must be Positive only";
+				return false;
+				
+			}
 			let isIDExist=false;
             allRollNumbers.forEach(no=> {
 				// console.log(no.innerText,roll_no.value);

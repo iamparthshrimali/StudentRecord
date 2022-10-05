@@ -3,6 +3,7 @@ const selectAll= ()=>{
         checkBox.checked=selectAllCheckBox.checked ;
         isAnySingleCheckBoxChecked=selectAllCheckBox.checked;
     });
+    
     if(!selectAllCheckBox.checked)
     {
         deleteBtn.style.backgroundColor="rgba(255,0,0,0.8)";
