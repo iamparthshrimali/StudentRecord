@@ -1,7 +1,7 @@
-FRONT END : HTML, CSS, JAVASCRIPT ----------------------------------
-BACKEND: JAVA SERVER PAGES(JSP)-------------------------------------
-SERVER: APACHE TOMCAT 10------------------------------------------
-DATABASE: MYSQL-------------------------------------------
+FRONT END : HTML, CSS, JAVASCRIPT-----
+BACKEND: JAVA SERVER PAGES(JSP)------
+SERVER: APACHE TOMCAT 10----
+DATABASE: MYSQ
 
 specifications:
 
